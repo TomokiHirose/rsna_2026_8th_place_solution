@@ -135,7 +135,7 @@ uv run python tools/kaggle_ops.py --owner <you> kernel --target A --wait
 uv run python tools/kaggle_ops.py --owner <you> submit --target A --version <N> --message "submission A"
 ```
 
-The model dataset (`<you>/rsna-knee-model`) is the whole `output/submit/`, so keep the stores of every submission there; the notebooks share it with the pkg dataset (`<you>/rsna-knee-pkg`) and each reads only the experiments in its `Ensemble`. Kernels: A `rsna-knee-8th-inference-a`, B `rsna-knee-8th-inference-b`, C `rsna-knee-8th-private-best-ensemble`.
+The model dataset (`<you>/rsna-knee-8th-model`) is the whole `output/submit/`, so keep the stores of every submission there; the notebooks share it with the pkg dataset (`<you>/rsna-knee-8th-pkg`) and each reads only the experiments in its `Ensemble`. Kernels: A `rsna-knee-8th-inference-a`, B `rsna-knee-8th-inference-b`, C `rsna-knee-8th-private-best-ensemble`.
 
 The submit step runs `kaggle competitions submit -c rsna-knee-abnormality-detection -f submission.csv -k <you>/rsna-knee-8th-inference-a -v <N> -m ...`.
 

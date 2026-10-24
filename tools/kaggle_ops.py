@@ -18,8 +18,8 @@ import click
 REPO_ROOT = Path(__file__).resolve().parents[1]
 KAGGLE = str(REPO_ROOT / ".venv" / "bin" / "kaggle") if (REPO_ROOT / ".venv" / "bin" / "kaggle").exists() else shutil.which("kaggle")
 COMPETITION = "rsna-knee-abnormality-detection"
-PKG_SLUG = "rsna-knee-pkg"
-MODEL_SLUG = "rsna-knee-model"
+PKG_SLUG = "rsna-knee-8th-pkg"
+MODEL_SLUG = "rsna-knee-8th-model"
 # Staging root; it must be on the same filesystem as the artifacts because files are hard-linked
 STAGE_ROOT = REPO_ROOT / "output"
 SUBMIT_STORE = REPO_ROOT / "output" / "submit"
