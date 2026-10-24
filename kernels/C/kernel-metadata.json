@@ -1,6 +1,6 @@
 {
-  "id": "OWNER/rsna-knee-inference-private-best-ensemble",
-  "title": "RSNA Knee inference private best ensemble",
+  "id": "OWNER/rsna-knee-8th-private-best-ensemble",
+  "title": "RSNA Knee 8th private best ensemble",
   "code_file": "inference.ipynb",
   "language": "python",
   "kernel_type": "notebook",
@@ -12,8 +12,8 @@
     "rsna-knee-abnormality-detection"
   ],
   "dataset_sources": [
-    "OWNER/rsna-knee-8th-pkg",
-    "OWNER/rsna-knee-8th-model"
+    "OWNER/rsna-knee-pkg",
+    "OWNER/rsna-knee-model"
   ],
   "model_sources": [],
   "machine_shape": "NvidiaTeslaT4",
