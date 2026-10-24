@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      # The lockfile pins CUDA wheels; CI has no GPU, so install the CPU build of torch first and the rest of the lock without the CUDA-only packages
+      - name: Install (CPU torch)
+        run: |
+          uv venv --python 3.12
+          uv pip install torch==2.10.0 torchvision==0.25.0 --index-url https://download.pytorch.org/whl/cpu
+          uv export --locked --extra train --dev --no-hashes --no-emit-project --format requirements-txt | grep -vE '^(torch|torchvision|triton|causal-conv1d|fla-core|flash-linear-attention)[=@ ]|^(nvidia-|cuda-)' > requirements-ci.txt
+          uv pip install -r requirements-ci.txt
+          uv pip install --no-deps -e .
+      - name: Lint
+        run: uv run --no-sync ruff check .
+      - name: Format
+        run: uv run --no-sync ruff format --check .
+      - name: Test
+        run: uv run --no-sync pytest --cov --cov-report=xml --cov-report=term
+      - uses: codecov/codecov-action@v5
+        with:
+          files: coverage.xml
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: false

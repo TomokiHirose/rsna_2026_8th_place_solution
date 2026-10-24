@@ -1,0 +1,15 @@
+{
+  "base": "blend3/pseudo2_v6_r040",
+  "rows": 4352,
+  "parents_removed": 8,
+  "children_added": 15,
+  "non_split_rows_equal_base": true,
+  "child_labels": "identical to blend3/pseudo_v6t275_r040_knees (no pseudo mixing)",
+  "knee_series_csv": "data/label/ayfukushima/bilateral_knees/knee_series.csv",
+  "gold58": "not included (added from train.csv at training time)",
+  "source_file": "outputs/exp308/input/labels_pseudo2_v6_r040_knees_v001.csv (kaggle-RSNA2026), Gold58 rows dropped",
+  "used_by": "exp308 (exp279 recipe, seeds 21-24)",
+  "sha256": {
+    "labels_soft.csv": "3e0be9178185cd9aedc7ea0bde56e3fc5ec6061a83462cf91b68c24610070cc1"
+  }
+}

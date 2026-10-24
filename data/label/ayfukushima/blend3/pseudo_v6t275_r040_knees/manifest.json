@@ -1,0 +1,17 @@
+{
+  "base": "blend3/pseudo_v6t275_r040",
+  "rows": 4352,
+  "parents_removed": 8,
+  "children_added": 15,
+  "non_split_rows_equal_base": true,
+  "child_label_source": "exp279 knee labels: per-knee image review x per-knee report labels (report_labels_v006 knee_soft_labels), weighted per finding, no pseudo mixing",
+  "knee_series_csv": "data/label/ayfukushima/bilateral_knees/knee_series.csv",
+  "gold58": "not included (added from train.csv at training time)",
+  "source_file": "outputs/exp279/input/labels_pseudo_v6t275_r040_knees_v001.csv (kaggle-RSNA2026)",
+  "sha256": {
+    "labels_soft.csv": "7b0da57e969e084455b042e28026bdd7360911d217f47ac9392f619fa362e1b6",
+    "base_labels_soft.csv": "e991fad2882483911a294128111280232c6eeaaa7a36fea1510e978a2072af6f",
+    "source_file": "eeb00a4914c0d4d773248b879dfb5aab776872809825cd8412784f715e669571",
+    "knee_series.csv": "87e437e154b3ef61a3104de52abfc50feae5c5ba9f2675c435785a4c864b09a2"
+  }
+}

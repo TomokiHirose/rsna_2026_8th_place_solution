@@ -1,0 +1,93 @@
+{
+  "note": "tools/make_folds.py",
+  "grouping": {
+    "keys": [
+      "scanner fingerprint: Manufacturer + ManufacturerModelName + SoftwareVersions + ReceiveCoilName (mode over the study's series)"
+    ],
+    "rule": "studies on the same scanner land in the same fold",
+    "duplicate_reports_dropped": 0,
+    "reference": "scanner-fingerprint grouping as in flight0234/rsna-knee-dual-grouped-folds; --dedup-reports additionally drops the same 134 studies they drop",
+    "n_groups": 148,
+    "largest_group": 353,
+    "largest_group_fraction": 0.0801,
+    "fingerprint_values": 148,
+    "report_values": 4273
+  },
+  "split": {
+    "n_folds": 4,
+    "seed": 42,
+    "splitter": "sklearn.model_selection.StratifiedGroupKFold(shuffle=True)",
+    "stratum": "number of positive findings clipped to 0/1/2/3+ (gold labels for the 58 fully labelled studies, LLM soft labels >= 0.5 otherwise)",
+    "n_studies": 4407,
+    "excluded": 0
+  },
+  "fold_sizes": {
+    "0": 1092,
+    "1": 1138,
+    "2": 1102,
+    "3": 1075
+  },
+  "positive_rate": {
+    "0": {
+      "ACL": 0.1383,
+      "MCL": 0.0495,
+      "Medial Meniscus": 0.4249,
+      "Lateral Meniscus": 0.1538,
+      "Medial OA": 0.2637,
+      "Lateral OA": 0.1319,
+      "PF OA": 0.3416,
+      "Effusion": 0.2234,
+      "Synovitis": 0.2143,
+      "Baker's": 0.1099,
+      "Contusion": 0.1447,
+      "Fracture": 0.0348
+    },
+    "1": {
+      "ACL": 0.1274,
+      "MCL": 0.0518,
+      "Medial Meniscus": 0.3989,
+      "Lateral Meniscus": 0.1573,
+      "Medial OA": 0.2724,
+      "Lateral OA": 0.174,
+      "PF OA": 0.3735,
+      "Effusion": 0.2707,
+      "Synovitis": 0.2522,
+      "Baker's": 0.1388,
+      "Contusion": 0.1485,
+      "Fracture": 0.0308
+    },
+    "2": {
+      "ACL": 0.1107,
+      "MCL": 0.0554,
+      "Medial Meniscus": 0.3312,
+      "Lateral Meniscus": 0.1089,
+      "Medial OA": 0.265,
+      "Lateral OA": 0.1797,
+      "PF OA": 0.373,
+      "Effusion": 0.274,
+      "Synovitis": 0.2541,
+      "Baker's": 0.1307,
+      "Contusion": 0.1588,
+      "Fracture": 0.0381
+    },
+    "3": {
+      "ACL": 0.1591,
+      "MCL": 0.0456,
+      "Medial Meniscus": 0.3758,
+      "Lateral Meniscus": 0.1312,
+      "Medial OA": 0.1833,
+      "Lateral OA": 0.1116,
+      "PF OA": 0.2521,
+      "Effusion": 0.2726,
+      "Synovitis": 0.2707,
+      "Baker's": 0.1135,
+      "Contusion": 0.1656,
+      "Fracture": 0.0577
+    }
+  },
+  "inputs": {
+    "input/rsna-knee-abnormality-detection/train.csv": "8ca2203c0e9d61c080c7a314c7cdb51c1b03a1d9eb4770819f7f34af53ef4e33",
+    "data/cache/cache_native_384_full_exact/series_meta.csv": "3a25b85ee8f95d41e21f1a7dd52da32b38f9af4eb4401c64293ce88cdeeffed5",
+    "input/rsna-knee-labels/labels_llm_soft.csv": "8cec477fb555e88bbb4196197fd3f806cbafed8cc2f6b2d48d26a8d49fbd86a1"
+  }
+}

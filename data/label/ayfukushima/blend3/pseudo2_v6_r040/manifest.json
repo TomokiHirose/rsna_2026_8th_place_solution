@@ -1,0 +1,75 @@
+{
+  "formula": "(1 - r) x start + r x calibrated teacher OOF",
+  "r": 0.4,
+  "start": "teacher_oof/v6/labels_teacher.csv (same start as pseudo_v6t275_r040)",
+  "teacher_oof": "teacher_oof/v6r2/oof_last.csv (exp307, round 2)",
+  "calibration": "per finding, isotonic of the start label on the OOF, fitted on the other 3 folds (folds_v1) and applied to the held-out fold, clipped to [0, 1]",
+  "rows": 4345,
+  "gold58": "not included (added from train.csv at training time)",
+  "source_file": "outputs/exp307/input/labels_pseudo2_v6t307_r040_v001.csv (kaggle-RSNA2026), non-Gold rows",
+  "oof_auc_by_finding_calibrated_vs_start": {
+    "ACL": {
+      "exp275": 0.9789452696529061,
+      "exp307_not_independent": 0.9858896055009594,
+      "mean_abs_cal_oof_change": 0.027530781951141437
+    },
+    "MCL": {
+      "exp275": 0.9291228070175439,
+      "exp307_not_independent": 0.9429273544873013,
+      "mean_abs_cal_oof_change": 0.01656063455344845
+    },
+    "Medial Meniscus": {
+      "exp275": 0.9423500969298048,
+      "exp307_not_independent": 0.9499012668500068,
+      "mean_abs_cal_oof_change": 0.03287762941773316
+    },
+    "Lateral Meniscus": {
+      "exp275": 0.9239997698326738,
+      "exp307_not_independent": 0.937711895474335,
+      "mean_abs_cal_oof_change": 0.02921096983586001
+    },
+    "Medial OA": {
+      "exp275": 0.953268699914088,
+      "exp307_not_independent": 0.955660324211653,
+      "mean_abs_cal_oof_change": 0.020338474427414044
+    },
+    "Lateral OA": {
+      "exp275": 0.8708010005255147,
+      "exp307_not_independent": 0.8949269056735121,
+      "mean_abs_cal_oof_change": 0.024866634813177562
+    },
+    "PF OA": {
+      "exp275": 0.9001668020838312,
+      "exp307_not_independent": 0.9105262151699087,
+      "mean_abs_cal_oof_change": 0.03796702732435125
+    },
+    "Effusion": {
+      "exp275": 0.9763752488363436,
+      "exp307_not_independent": 0.9784945625054148,
+      "mean_abs_cal_oof_change": 0.024713776767708428
+    },
+    "Synovitis": {
+      "exp275": 0.9381893859653716,
+      "exp307_not_independent": 0.9386000282780254,
+      "mean_abs_cal_oof_change": 0.016855100850424534
+    },
+    "Baker's": {
+      "exp275": 0.9913088099304451,
+      "exp307_not_independent": 0.9942856194273315,
+      "mean_abs_cal_oof_change": 0.01925256495594903
+    },
+    "Contusion": {
+      "exp275": 0.9745682776048364,
+      "exp307_not_independent": 0.9788267621575931,
+      "mean_abs_cal_oof_change": 0.02254662246934676
+    },
+    "Fracture": {
+      "exp275": 0.950200956285423,
+      "exp307_not_independent": 0.9600876336738899,
+      "mean_abs_cal_oof_change": 0.01544746902796014
+    }
+  },
+  "sha256": {
+    "labels_soft.csv": "51687a89c3706683680adb1ad6be5e9552bac8fd5ae760de3c4f6ee5bb67b495"
+  }
+}

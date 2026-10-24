@@ -1,0 +1,54 @@
+{
+  "experiment_name": "coatnet_spatial_lsewin03_s2online_union_ctxattn_headreset_ctxenc_ep10_aug_mixlabel_v6t275r040_pseudo2v6r040_cos20_softlse_half_all_seriesaug_ema_usub_dprior_a10",
+  "seed": 42,
+  "data": {
+    "split": "all",
+    "cache_dir": "data/cache/cache_native_384_series_all_exact_uniform_sub",
+    "labels_csv": "data/label/ayfukushima/blend3/pseudo_v6t275_r040/labels_soft.csv",
+    "batch_size": 4,
+    "num_workers": 8,
+    "union_bag": {
+      "k_min": 32,
+      "k_max": 352,
+      "eval_cap": 384
+    },
+    "depth_prior": {
+      "path": "data/depth_prior/v1.json",
+      "alpha": 1.0
+    }
+  },
+  "model": {
+    "freeze_encoder": true,
+    "window": {
+      "norm": "half",
+      "pool": "lse",
+      "train_chunk": 64
+    },
+    "spatial": {
+      "enabled": true
+    },
+    "context": {
+      "enabled": true,
+      "dim": 256,
+      "hidden": 256,
+      "heads": 4
+    }
+  },
+  "train": {
+    "epochs": 10,
+    "learning_rate": 0.0001,
+    "encoder_lr": 0.0,
+    "grad_checkpointing": false,
+    "rank_queue": 32,
+    "ema_decay": 0.995,
+    "rank_loss": "soft_lse",
+    "rank_temperature": 1.0,
+    "window_loss_weight": 0.3,
+    "init_weights": "output/coatnet_spatial_lsewin03_ctxattn_aug_v6t275r040_cos20_softlse_half_all_seriesaug_ema_usub_dprior_a10/fold0/model.pt",
+    "init_weights_skip": [
+      "clsW",
+      "clsb"
+    ],
+    "save_every_epoch": true
+  }
+}

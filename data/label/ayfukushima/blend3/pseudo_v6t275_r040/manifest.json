@@ -1,0 +1,76 @@
+{
+ "recipe": "label = (1 - r) * start_v6 + r * isotonic(OOF -> start_v6, other 3 teacher folds), clipped to [0, 1]",
+ "r": 0.4,
+ "rows": 4345,
+ "start": "teacher_oof/v6/labels_teacher.csv (= start of blend3/pseudo_v6_r040)",
+ "teacher_oof": "teacher_oof/v6/oof_last.csv (exp275)",
+ "folds": "data/folds_v1.csv restricted to the 4,345 studies",
+ "source_file": "outputs/exp275/input/labels_pseudo_v6t275_r040_v001.csv (kaggle-RSNA2026, outputs/exp275/build_pseudo_v001.py)",
+ "inputs": {
+  "teacher_oof/v6/labels_teacher.csv": "052114753cfa45001e11067a3e9fd3fcbfeff75d029c13db90d1467fe07e2f37",
+  "teacher_oof/v6/oof_last.csv": "839aa29adbe84a371533551569aec31cd71e9e4d67622d6595d430cb10087d38"
+ },
+ "oof_auc_by_finding": {
+  "ACL": {
+   "raw": 0.9809,
+   "calibrated": 0.9789,
+   "exp242_calibrated": 0.9759
+  },
+  "MCL": {
+   "raw": 0.932,
+   "calibrated": 0.9291,
+   "exp242_calibrated": 0.9186
+  },
+  "Medial Meniscus": {
+   "raw": 0.9445,
+   "calibrated": 0.9424,
+   "exp242_calibrated": 0.942
+  },
+  "Lateral Meniscus": {
+   "raw": 0.9265,
+   "calibrated": 0.924,
+   "exp242_calibrated": 0.9209
+  },
+  "Medial OA": {
+   "raw": 0.9546,
+   "calibrated": 0.9533,
+   "exp242_calibrated": 0.9505
+  },
+  "Lateral OA": {
+   "raw": 0.8765,
+   "calibrated": 0.8708,
+   "exp242_calibrated": 0.8681
+  },
+  "PF OA": {
+   "raw": 0.9037,
+   "calibrated": 0.9002,
+   "exp242_calibrated": 0.8933
+  },
+  "Effusion": {
+   "raw": 0.9772,
+   "calibrated": 0.9764,
+   "exp242_calibrated": 0.9757
+  },
+  "Synovitis": {
+   "raw": 0.9396,
+   "calibrated": 0.9382,
+   "exp242_calibrated": 0.9327
+  },
+  "Baker's": {
+   "raw": 0.9917,
+   "calibrated": 0.9913,
+   "exp242_calibrated": 0.9887
+  },
+  "Contusion": {
+   "raw": 0.9758,
+   "calibrated": 0.9746,
+   "exp242_calibrated": 0.9705
+  },
+  "Fracture": {
+   "raw": 0.9529,
+   "calibrated": 0.9502,
+   "exp242_calibrated": 0.948
+  }
+ },
+ "labels_sha256": "e991fad2882483911a294128111280232c6eeaaa7a36fea1510e978a2072af6f"
+}

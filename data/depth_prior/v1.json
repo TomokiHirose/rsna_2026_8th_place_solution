@@ -1,0 +1,1367 @@
+{
+ "version": 1,
+ "truncate": [
+  -1.0,
+  1.0
+ ],
+ "sigma_floor": 0.08,
+ "attention": "gap",
+ "slots": {
+  "SAG_FLUID": {
+   "components": [
+    {
+     "finding": "ACL",
+     "weight": 0.06684,
+     "mean": -0.182568,
+     "sigma": 0.393062
+    },
+    {
+     "finding": "ACL",
+     "weight": 0.016493,
+     "mean": 0.634205,
+     "sigma": 0.210552
+    },
+    {
+     "finding": "MCL",
+     "weight": 0.038144,
+     "mean": -0.523639,
+     "sigma": 0.469564
+    },
+    {
+     "finding": "MCL",
+     "weight": 0.045189,
+     "mean": 0.629464,
+     "sigma": 0.339616
+    },
+    {
+     "finding": "Medial Meniscus",
+     "weight": 0.023007,
+     "mean": -0.374828,
+     "sigma": 0.374921
+    },
+    {
+     "finding": "Medial Meniscus",
+     "weight": 0.060326,
+     "mean": 0.519696,
+     "sigma": 0.194834
+    },
+    {
+     "finding": "Lateral Meniscus",
+     "weight": 0.010387,
+     "mean": -0.519281,
+     "sigma": 0.168049
+    },
+    {
+     "finding": "Lateral Meniscus",
+     "weight": 0.072946,
+     "mean": 1.5,
+     "sigma": 3.175702
+    },
+    {
+     "finding": "Medial OA",
+     "weight": 0.012673,
+     "mean": -0.29153,
+     "sigma": 0.394409
+    },
+    {
+     "finding": "Medial OA",
+     "weight": 0.07066,
+     "mean": 0.490954,
+     "sigma": 0.192231
+    },
+    {
+     "finding": "Lateral OA",
+     "weight": 0.029102,
+     "mean": -0.484253,
+     "sigma": 0.177783
+    },
+    {
+     "finding": "Lateral OA",
+     "weight": 0.054231,
+     "mean": 0.003334,
+     "sigma": 0.744598
+    },
+    {
+     "finding": "PF OA",
+     "weight": 0.047759,
+     "mean": -0.346301,
+     "sigma": 0.445231
+    },
+    {
+     "finding": "PF OA",
+     "weight": 0.017366,
+     "mean": -0.072403,
+     "sigma": 0.175109
+    },
+    {
+     "finding": "PF OA",
+     "weight": 0.018208,
+     "mean": 0.641904,
+     "sigma": 0.322573
+    },
+    {
+     "finding": "Effusion",
+     "weight": 0.083333,
+     "mean": -0.035706,
+     "sigma": 0.774993
+    },
+    {
+     "finding": "Synovitis",
+     "weight": 0.083333,
+     "mean": 0.0242,
+     "sigma": 1.101111
+    },
+    {
+     "finding": "Baker's",
+     "weight": 0.01559,
+     "mean": -0.502323,
+     "sigma": 0.460605
+    },
+    {
+     "finding": "Baker's",
+     "weight": 0.067743,
+     "mean": 0.558639,
+     "sigma": 0.21571
+    },
+    {
+     "finding": "Contusion",
+     "weight": 0.05148,
+     "mean": -0.3034,
+     "sigma": 0.403721
+    },
+    {
+     "finding": "Contusion",
+     "weight": 0.031853,
+     "mean": 0.528289,
+     "sigma": 0.266959
+    },
+    {
+     "finding": "Fracture",
+     "weight": 0.075458,
+     "mean": -0.008244,
+     "sigma": 0.910261
+    },
+    {
+     "finding": "Fracture",
+     "weight": 0.007876,
+     "mean": 0.540546,
+     "sigma": 0.134211
+    }
+   ],
+   "findings": {
+    "ACL": {
+     "k": 2,
+     "bic": [
+      12303.322,
+      12279.085,
+      12290.902,
+      12312.833
+     ],
+     "n_study_slots": 1901
+    },
+    "MCL": {
+     "k": 2,
+     "bic": [
+      12566.953,
+      12535.597,
+      12555.499,
+      12573.587
+     ],
+     "n_study_slots": 1901
+    },
+    "Medial Meniscus": {
+     "k": 2,
+     "bic": [
+      11966.467,
+      11425.06,
+      11444.845,
+      11467.053
+     ],
+     "n_study_slots": 1901
+    },
+    "Lateral Meniscus": {
+     "k": 2,
+     "bic": [
+      12465.605,
+      12150.091,
+      12171.789,
+      12192.353
+     ],
+     "n_study_slots": 1901
+    },
+    "Medial OA": {
+     "k": 2,
+     "bic": [
+      11183.053,
+      10579.662,
+      10600.565,
+      10623.113
+     ],
+     "n_study_slots": 1901
+    },
+    "Lateral OA": {
+     "k": 2,
+     "bic": [
+      12260.086,
+      12029.335,
+      12051.735,
+      12073.91
+     ],
+     "n_study_slots": 1901
+    },
+    "PF OA": {
+     "k": 3,
+     "bic": [
+      12293.469,
+      12274.098,
+      12270.976,
+      12293.206
+     ],
+     "n_study_slots": 1901
+    },
+    "Effusion": {
+     "k": 1,
+     "bic": [
+      12544.173,
+      12548.882,
+      12571.321,
+      12592.164
+     ],
+     "n_study_slots": 1901
+    },
+    "Synovitis": {
+     "k": 1,
+     "bic": [
+      12621.317,
+      12640.949,
+      12662.789,
+      12684.037
+     ],
+     "n_study_slots": 1901
+    },
+    "Baker's": {
+     "k": 2,
+     "bic": [
+      11595.344,
+      11032.626,
+      11053.996,
+      11076.531
+     ],
+     "n_study_slots": 1901
+    },
+    "Contusion": {
+     "k": 2,
+     "bic": [
+      12471.694,
+      12447.111,
+      12465.06,
+      12480.64
+     ],
+     "n_study_slots": 1901
+    },
+    "Fracture": {
+     "k": 2,
+     "bic": [
+      12571.576,
+      12540.216,
+      12553.469,
+      12574.399
+     ],
+     "n_study_slots": 1901
+    }
+   }
+  },
+  "SAG_STRUCT": {
+   "components": [
+    {
+     "finding": "ACL",
+     "weight": 0.061509,
+     "mean": -0.2123,
+     "sigma": 0.370229
+    },
+    {
+     "finding": "ACL",
+     "weight": 0.021824,
+     "mean": 0.59025,
+     "sigma": 0.199755
+    },
+    {
+     "finding": "MCL",
+     "weight": 0.037028,
+     "mean": -0.573115,
+     "sigma": 0.411635
+    },
+    {
+     "finding": "MCL",
+     "weight": 0.046306,
+     "mean": 0.636053,
+     "sigma": 0.293214
+    },
+    {
+     "finding": "Medial Meniscus",
+     "weight": 0.022141,
+     "mean": -0.426016,
+     "sigma": 0.352987
+    },
+    {
+     "finding": "Medial Meniscus",
+     "weight": 0.061193,
+     "mean": 0.527291,
+     "sigma": 0.185166
+    },
+    {
+     "finding": "Lateral Meniscus",
+     "weight": 0.011074,
+     "mean": -0.518682,
+     "sigma": 0.161834
+    },
+    {
+     "finding": "Lateral Meniscus",
+     "weight": 0.07226,
+     "mean": 1.5,
+     "sigma": 3.623649
+    },
+    {
+     "finding": "Medial OA",
+     "weight": 0.023327,
+     "mean": 0.002537,
+     "sigma": 0.692963
+    },
+    {
+     "finding": "Medial OA",
+     "weight": 0.060007,
+     "mean": 0.505294,
+     "sigma": 0.165069
+    },
+    {
+     "finding": "Lateral OA",
+     "weight": 0.029361,
+     "mean": -0.477994,
+     "sigma": 0.192895
+    },
+    {
+     "finding": "Lateral OA",
+     "weight": 0.053972,
+     "mean": 0.014614,
+     "sigma": 0.702186
+    },
+    {
+     "finding": "PF OA",
+     "weight": 0.075813,
+     "mean": -0.152132,
+     "sigma": 0.521102
+    },
+    {
+     "finding": "PF OA",
+     "weight": 0.00752,
+     "mean": 0.857983,
+     "sigma": 0.194898
+    },
+    {
+     "finding": "Effusion",
+     "weight": 0.043897,
+     "mean": -0.451084,
+     "sigma": 0.377862
+    },
+    {
+     "finding": "Effusion",
+     "weight": 0.039436,
+     "mean": 0.499761,
+     "sigma": 0.375065
+    },
+    {
+     "finding": "Synovitis",
+     "weight": 0.083333,
+     "mean": 0.218961,
+     "sigma": 2.950288
+    },
+    {
+     "finding": "Baker's",
+     "weight": 0.016012,
+     "mean": -0.51175,
+     "sigma": 0.461196
+    },
+    {
+     "finding": "Baker's",
+     "weight": 0.067321,
+     "mean": 0.560621,
+     "sigma": 0.197108
+    },
+    {
+     "finding": "Contusion",
+     "weight": 0.059086,
+     "mean": -0.254488,
+     "sigma": 0.477574
+    },
+    {
+     "finding": "Contusion",
+     "weight": 0.024247,
+     "mean": 0.573803,
+     "sigma": 0.263171
+    },
+    {
+     "finding": "Fracture",
+     "weight": 0.07864,
+     "mean": -0.032025,
+     "sigma": 1.053348
+    },
+    {
+     "finding": "Fracture",
+     "weight": 0.004693,
+     "mean": 0.528613,
+     "sigma": 0.106352
+    }
+   ],
+   "findings": {
+    "ACL": {
+     "k": 2,
+     "bic": [
+      12748.782,
+      12691.088,
+      12695.904,
+      12713.625
+     ],
+     "n_study_slots": 1979
+    },
+    "MCL": {
+     "k": 2,
+     "bic": [
+      12995.992,
+      12856.252,
+      12876.096,
+      12890.178
+     ],
+     "n_study_slots": 1979
+    },
+    "Medial Meniscus": {
+     "k": 2,
+     "bic": [
+      12406.931,
+      11692.156,
+      11705.743,
+      11724.742
+     ],
+     "n_study_slots": 1979
+    },
+    "Lateral Meniscus": {
+     "k": 2,
+     "bic": [
+      12814.949,
+      12386.819,
+      12407.459,
+      12423.992
+     ],
+     "n_study_slots": 1979
+    },
+    "Medial OA": {
+     "k": 2,
+     "bic": [
+      11659.14,
+      10874.165,
+      10896.127,
+      10918.183
+     ],
+     "n_study_slots": 1979
+    },
+    "Lateral OA": {
+     "k": 2,
+     "bic": [
+      12675.719,
+      12484.777,
+      12505.863,
+      12528.293
+     ],
+     "n_study_slots": 1979
+    },
+    "PF OA": {
+     "k": 2,
+     "bic": [
+      12861.512,
+      12859.623,
+      12866.4,
+      12888.867
+     ],
+     "n_study_slots": 1979
+    },
+    "Effusion": {
+     "k": 2,
+     "bic": [
+      13002.898,
+      12996.493,
+      13018.522,
+      13038.629
+     ],
+     "n_study_slots": 1979
+    },
+    "Synovitis": {
+     "k": 1,
+     "bic": [
+      13078.881,
+      13090.95,
+      13112.768,
+      13134.158
+     ],
+     "n_study_slots": 1979
+    },
+    "Baker's": {
+     "k": 2,
+     "bic": [
+      11978.444,
+      11239.165,
+      11251.669,
+      11272.641
+     ],
+     "n_study_slots": 1979
+    },
+    "Contusion": {
+     "k": 2,
+     "bic": [
+      12926.202,
+      12923.035,
+      12930.964,
+      12951.093
+     ],
+     "n_study_slots": 1979
+    },
+    "Fracture": {
+     "k": 2,
+     "bic": [
+      13037.21,
+      13021.308,
+      13036.745,
+      13055.344
+     ],
+     "n_study_slots": 1979
+    }
+   }
+  },
+  "COR_FLUID": {
+   "components": [
+    {
+     "finding": "ACL",
+     "weight": 0.067406,
+     "mean": 0.172927,
+     "sigma": 1.054433
+    },
+    {
+     "finding": "ACL",
+     "weight": 0.015927,
+     "mean": 0.247494,
+     "sigma": 0.230508
+    },
+    {
+     "finding": "MCL",
+     "weight": 0.041095,
+     "mean": -0.844367,
+     "sigma": 2.420143
+    },
+    {
+     "finding": "MCL",
+     "weight": 0.033716,
+     "mean": 0.191477,
+     "sigma": 0.268027
+    },
+    {
+     "finding": "MCL",
+     "weight": 0.008523,
+     "mean": 0.833152,
+     "sigma": 0.533218
+    },
+    {
+     "finding": "Medial Meniscus",
+     "weight": 0.007631,
+     "mean": -0.684683,
+     "sigma": 0.311581
+    },
+    {
+     "finding": "Medial Meniscus",
+     "weight": 0.075703,
+     "mean": 0.27904,
+     "sigma": 0.319231
+    },
+    {
+     "finding": "Lateral Meniscus",
+     "weight": 0.019128,
+     "mean": -0.451107,
+     "sigma": 0.656532
+    },
+    {
+     "finding": "Lateral Meniscus",
+     "weight": 0.060333,
+     "mean": 0.224108,
+     "sigma": 0.267508
+    },
+    {
+     "finding": "Lateral Meniscus",
+     "weight": 0.003873,
+     "mean": 0.977261,
+     "sigma": 0.152697
+    },
+    {
+     "finding": "Medial OA",
+     "weight": 0.004577,
+     "mean": -0.740654,
+     "sigma": 0.216393
+    },
+    {
+     "finding": "Medial OA",
+     "weight": 0.078756,
+     "mean": 0.19088,
+     "sigma": 0.298601
+    },
+    {
+     "finding": "Lateral OA",
+     "weight": 0.016728,
+     "mean": -0.672851,
+     "sigma": 0.300591
+    },
+    {
+     "finding": "Lateral OA",
+     "weight": 0.060123,
+     "mean": 0.202542,
+     "sigma": 0.325607
+    },
+    {
+     "finding": "Lateral OA",
+     "weight": 0.006482,
+     "mean": 0.960887,
+     "sigma": 0.158651
+    },
+    {
+     "finding": "PF OA",
+     "weight": 0.018219,
+     "mean": -0.656924,
+     "sigma": 0.15077
+    },
+    {
+     "finding": "PF OA",
+     "weight": 0.065114,
+     "mean": -0.283272,
+     "sigma": 0.684351
+    },
+    {
+     "finding": "Effusion",
+     "weight": 0.083333,
+     "mean": 0.052477,
+     "sigma": 0.646864
+    },
+    {
+     "finding": "Synovitis",
+     "weight": 0.083333,
+     "mean": -0.03806,
+     "sigma": 0.811286
+    },
+    {
+     "finding": "Baker's",
+     "weight": 0.016724,
+     "mean": 0.97824,
+     "sigma": 0.192146
+    },
+    {
+     "finding": "Baker's",
+     "weight": 0.06661,
+     "mean": 1.5,
+     "sigma": 1.392481
+    },
+    {
+     "finding": "Contusion",
+     "weight": 0.010952,
+     "mean": -0.692536,
+     "sigma": 0.232134
+    },
+    {
+     "finding": "Contusion",
+     "weight": 0.069749,
+     "mean": 0.16557,
+     "sigma": 0.320794
+    },
+    {
+     "finding": "Contusion",
+     "weight": 0.002632,
+     "mean": 0.932565,
+     "sigma": 0.118789
+    },
+    {
+     "finding": "Fracture",
+     "weight": 0.014667,
+     "mean": -0.753025,
+     "sigma": 0.309023
+    },
+    {
+     "finding": "Fracture",
+     "weight": 0.061986,
+     "mean": 0.172461,
+     "sigma": 0.303497
+    },
+    {
+     "finding": "Fracture",
+     "weight": 0.00668,
+     "mean": 0.967918,
+     "sigma": 0.198169
+    }
+   ],
+   "findings": {
+    "ACL": {
+     "k": 2,
+     "bic": [
+      25360.021,
+      25262.139,
+      25277.345,
+      25302.252
+     ],
+     "n_study_slots": 4070
+    },
+    "MCL": {
+     "k": 3,
+     "bic": [
+      24144.63,
+      23951.846,
+      23925.687,
+      23950.174
+     ],
+     "n_study_slots": 4070
+    },
+    "Medial Meniscus": {
+     "k": 2,
+     "bic": [
+      23786.227,
+      23540.445,
+      23547.79,
+      23572.234
+     ],
+     "n_study_slots": 4070
+    },
+    "Lateral Meniscus": {
+     "k": 3,
+     "bic": [
+      23823.781,
+      23560.51,
+      23533.53,
+      23558.438
+     ],
+     "n_study_slots": 4070
+    },
+    "Medial OA": {
+     "k": 2,
+     "bic": [
+      23120.894,
+      22889.009,
+      22897.857,
+      22922.776
+     ],
+     "n_study_slots": 4070
+    },
+    "Lateral OA": {
+     "k": 3,
+     "bic": [
+      25109.67,
+      25023.203,
+      25005.111,
+      25029.898
+     ],
+     "n_study_slots": 4070
+    },
+    "PF OA": {
+     "k": 2,
+     "bic": [
+      24763.876,
+      24593.721,
+      24616.844,
+      24639.56
+     ],
+     "n_study_slots": 4070
+    },
+    "Effusion": {
+     "k": 1,
+     "bic": [
+      25449.779,
+      25468.953,
+      25484.282,
+      25509.203
+     ],
+     "n_study_slots": 4070
+    },
+    "Synovitis": {
+     "k": 1,
+     "bic": [
+      25697.641,
+      25707.901,
+      25730.743,
+      25755.55
+     ],
+     "n_study_slots": 4070
+    },
+    "Baker's": {
+     "k": 2,
+     "bic": [
+      23933.395,
+      23557.52,
+      23571.674,
+      23594.002
+     ],
+     "n_study_slots": 4070
+    },
+    "Contusion": {
+     "k": 3,
+     "bic": [
+      24510.353,
+      24370.609,
+      24367.03,
+      24391.886
+     ],
+     "n_study_slots": 4070
+    },
+    "Fracture": {
+     "k": 3,
+     "bic": [
+      24804.766,
+      24612.089,
+      24582.369,
+      24606.627
+     ],
+     "n_study_slots": 4070
+    }
+   }
+  },
+  "COR_SECOND": {
+   "components": [
+    {
+     "finding": "ACL",
+     "weight": 0.004462,
+     "mean": 0.261027,
+     "sigma": 0.219823
+    },
+    {
+     "finding": "ACL",
+     "weight": 0.078871,
+     "mean": 1.5,
+     "sigma": 2.962897
+    },
+    {
+     "finding": "MCL",
+     "weight": 0.027423,
+     "mean": -1.5,
+     "sigma": 0.717902
+    },
+    {
+     "finding": "MCL",
+     "weight": 0.040931,
+     "mean": 0.194418,
+     "sigma": 0.247972
+    },
+    {
+     "finding": "MCL",
+     "weight": 0.014979,
+     "mean": 0.863054,
+     "sigma": 0.258495
+    },
+    {
+     "finding": "Medial Meniscus",
+     "weight": 0.026053,
+     "mean": -0.227978,
+     "sigma": 0.764403
+    },
+    {
+     "finding": "Medial Meniscus",
+     "weight": 0.055314,
+     "mean": 0.263956,
+     "sigma": 0.240569
+    },
+    {
+     "finding": "Medial Meniscus",
+     "weight": 0.001966,
+     "mean": 0.950683,
+     "sigma": 0.108961
+    },
+    {
+     "finding": "Lateral Meniscus",
+     "weight": 0.043559,
+     "mean": -0.490466,
+     "sigma": 1.708777
+    },
+    {
+     "finding": "Lateral Meniscus",
+     "weight": 0.038661,
+     "mean": 0.224252,
+     "sigma": 0.231893
+    },
+    {
+     "finding": "Lateral Meniscus",
+     "weight": 0.001114,
+     "mean": 0.928385,
+     "sigma": 0.098999
+    },
+    {
+     "finding": "Medial OA",
+     "weight": 0.009116,
+     "mean": -0.743269,
+     "sigma": 0.434859
+    },
+    {
+     "finding": "Medial OA",
+     "weight": 0.066472,
+     "mean": 0.17388,
+     "sigma": 0.243781
+    },
+    {
+     "finding": "Medial OA",
+     "weight": 0.007746,
+     "mean": 0.682802,
+     "sigma": 0.318665
+    },
+    {
+     "finding": "Lateral OA",
+     "weight": 0.031102,
+     "mean": -0.471406,
+     "sigma": 0.691071
+    },
+    {
+     "finding": "Lateral OA",
+     "weight": 0.036539,
+     "mean": 0.21785,
+     "sigma": 0.249339
+    },
+    {
+     "finding": "Lateral OA",
+     "weight": 0.015692,
+     "mean": 1.079188,
+     "sigma": 0.413749
+    },
+    {
+     "finding": "PF OA",
+     "weight": 0.006334,
+     "mean": -0.706908,
+     "sigma": 0.127261
+    },
+    {
+     "finding": "PF OA",
+     "weight": 0.076999,
+     "mean": -0.55577,
+     "sigma": 1.106564
+    },
+    {
+     "finding": "Effusion",
+     "weight": 0.00688,
+     "mean": -0.855044,
+     "sigma": 0.196195
+    },
+    {
+     "finding": "Effusion",
+     "weight": 0.076453,
+     "mean": 0.187551,
+     "sigma": 0.558353
+    },
+    {
+     "finding": "Synovitis",
+     "weight": 0.083333,
+     "mean": 0.04258,
+     "sigma": 0.971091
+    },
+    {
+     "finding": "Baker's",
+     "weight": 0.031367,
+     "mean": -1.5,
+     "sigma": 0.743451
+    },
+    {
+     "finding": "Baker's",
+     "weight": 0.028656,
+     "mean": 0.342316,
+     "sigma": 0.416674
+    },
+    {
+     "finding": "Baker's",
+     "weight": 0.023311,
+     "mean": 0.974988,
+     "sigma": 0.202301
+    },
+    {
+     "finding": "Contusion",
+     "weight": 0.021718,
+     "mean": -0.701069,
+     "sigma": 0.36597
+    },
+    {
+     "finding": "Contusion",
+     "weight": 0.048884,
+     "mean": 0.184939,
+     "sigma": 0.253761
+    },
+    {
+     "finding": "Contusion",
+     "weight": 0.012731,
+     "mean": 0.864528,
+     "sigma": 0.240313
+    },
+    {
+     "finding": "Fracture",
+     "weight": 0.045867,
+     "mean": -1.156094,
+     "sigma": 0.925487
+    },
+    {
+     "finding": "Fracture",
+     "weight": 0.026587,
+     "mean": 0.178299,
+     "sigma": 0.229353
+    },
+    {
+     "finding": "Fracture",
+     "weight": 0.01088,
+     "mean": 0.837913,
+     "sigma": 0.27333
+    }
+   ],
+   "findings": {
+    "ACL": {
+     "k": 2,
+     "bic": [
+      19428.843,
+      19370.707,
+      19385.86,
+      19409.965
+     ],
+     "n_study_slots": 3088
+    },
+    "MCL": {
+     "k": 3,
+     "bic": [
+      18534.841,
+      18293.471,
+      18202.452,
+      18225.94
+     ],
+     "n_study_slots": 3088
+    },
+    "Medial Meniscus": {
+     "k": 3,
+     "bic": [
+      17990.87,
+      17678.08,
+      17659.473,
+      17681.274
+     ],
+     "n_study_slots": 3088
+    },
+    "Lateral Meniscus": {
+     "k": 3,
+     "bic": [
+      18298.977,
+      17972.592,
+      17914.61,
+      17938.454
+     ],
+     "n_study_slots": 3088
+    },
+    "Medial OA": {
+     "k": 3,
+     "bic": [
+      17451.272,
+      17177.639,
+      17167.403,
+      17191.34
+     ],
+     "n_study_slots": 3088
+    },
+    "Lateral OA": {
+     "k": 3,
+     "bic": [
+      18873.018,
+      18730.31,
+      18705.55,
+      18729.539
+     ],
+     "n_study_slots": 3088
+    },
+    "PF OA": {
+     "k": 2,
+     "bic": [
+      19186.4,
+      19159.52,
+      19177.647,
+      19200.902
+     ],
+     "n_study_slots": 3088
+    },
+    "Effusion": {
+     "k": 2,
+     "bic": [
+      19307.311,
+      19301.725,
+      19306.541,
+      19330.626
+     ],
+     "n_study_slots": 3088
+    },
+    "Synovitis": {
+     "k": 1,
+     "bic": [
+      19518.455,
+      19540.645,
+      19563.472,
+      19587.108
+     ],
+     "n_study_slots": 3088
+    },
+    "Baker's": {
+     "k": 3,
+     "bic": [
+      18817.281,
+      18762.337,
+      18753.017,
+      18776.927
+     ],
+     "n_study_slots": 3088
+    },
+    "Contusion": {
+     "k": 3,
+     "bic": [
+      19071.838,
+      18921.668,
+      18873.595,
+      18897.383
+     ],
+     "n_study_slots": 3088
+    },
+    "Fracture": {
+     "k": 3,
+     "bic": [
+      19254.772,
+      19083.534,
+      19029.825,
+      19053.698
+     ],
+     "n_study_slots": 3088
+    }
+   }
+  },
+  "AXIAL": {
+   "components": [
+    {
+     "finding": "ACL",
+     "weight": 0.083333,
+     "mean": 0.206813,
+     "sigma": 1.064305
+    },
+    {
+     "finding": "MCL",
+     "weight": 0.083333,
+     "mean": 0.029099,
+     "sigma": 0.747801
+    },
+    {
+     "finding": "Medial Meniscus",
+     "weight": 0.083333,
+     "mean": -0.061041,
+     "sigma": 0.86134
+    },
+    {
+     "finding": "Lateral Meniscus",
+     "weight": 0.083333,
+     "mean": 0.028571,
+     "sigma": 4.0
+    },
+    {
+     "finding": "Medial OA",
+     "weight": 0.083333,
+     "mean": 0.078042,
+     "sigma": 0.724858
+    },
+    {
+     "finding": "Lateral OA",
+     "weight": 0.083333,
+     "mean": 0.090442,
+     "sigma": 0.84654
+    },
+    {
+     "finding": "PF OA",
+     "weight": 0.02074,
+     "mean": -0.457296,
+     "sigma": 0.417814
+    },
+    {
+     "finding": "PF OA",
+     "weight": 0.062593,
+     "mean": 0.444289,
+     "sigma": 0.282548
+    },
+    {
+     "finding": "Effusion",
+     "weight": 0.022048,
+     "mean": -0.759822,
+     "sigma": 0.477613
+    },
+    {
+     "finding": "Effusion",
+     "weight": 0.061285,
+     "mean": 0.42827,
+     "sigma": 0.525845
+    },
+    {
+     "finding": "Synovitis",
+     "weight": 0.042028,
+     "mean": -0.496871,
+     "sigma": 0.740479
+    },
+    {
+     "finding": "Synovitis",
+     "weight": 0.041305,
+     "mean": 0.631304,
+     "sigma": 0.416422
+    },
+    {
+     "finding": "Baker's",
+     "weight": 0.083333,
+     "mean": -0.040636,
+     "sigma": 0.465056
+    },
+    {
+     "finding": "Contusion",
+     "weight": 0.070969,
+     "mean": -0.00269,
+     "sigma": 0.705325
+    },
+    {
+     "finding": "Contusion",
+     "weight": 0.012364,
+     "mean": 0.363583,
+     "sigma": 0.214547
+    },
+    {
+     "finding": "Fracture",
+     "weight": 0.020346,
+     "mean": -0.624078,
+     "sigma": 0.319589
+    },
+    {
+     "finding": "Fracture",
+     "weight": 0.062988,
+     "mean": 0.285932,
+     "sigma": 0.425958
+    }
+   ],
+   "findings": {
+    "ACL": {
+     "k": 1,
+     "bic": [
+      26701.186,
+      26706.166,
+      26730.471,
+      26754.626
+     ],
+     "n_study_slots": 4073
+    },
+    "MCL": {
+     "k": 1,
+     "bic": [
+      26548.473,
+      26563.463,
+      26581.54,
+      26606.476
+     ],
+     "n_study_slots": 4073
+    },
+    "Medial Meniscus": {
+     "k": 1,
+     "bic": [
+      26647.871,
+      26669.538,
+      26688.596,
+      26713.447
+     ],
+     "n_study_slots": 4073
+    },
+    "Lateral Meniscus": {
+     "k": 1,
+     "bic": [
+      26802.601,
+      26817.37,
+      26838.616,
+      26863.258
+     ],
+     "n_study_slots": 4073
+    },
+    "Medial OA": {
+     "k": 1,
+     "bic": [
+      26502.98,
+      26507.715,
+      26530.567,
+      26555.237
+     ],
+     "n_study_slots": 4073
+    },
+    "Lateral OA": {
+     "k": 1,
+     "bic": [
+      26629.646,
+      26639.898,
+      26662.329,
+      26687.188
+     ],
+     "n_study_slots": 4073
+    },
+    "PF OA": {
+     "k": 2,
+     "bic": [
+      25534.28,
+      25116.155,
+      25128.713,
+      25153.632
+     ],
+     "n_study_slots": 4073
+    },
+    "Effusion": {
+     "k": 2,
+     "bic": [
+      26520.131,
+      26511.247,
+      26535.341,
+      26560.091
+     ],
+     "n_study_slots": 4073
+    },
+    "Synovitis": {
+     "k": 2,
+     "bic": [
+      26503.65,
+      26476.54,
+      26501.216,
+      26525.714
+     ],
+     "n_study_slots": 4073
+    },
+    "Baker's": {
+     "k": 1,
+     "bic": [
+      25500.294,
+      25512.372,
+      25504.866,
+      25529.514
+     ],
+     "n_study_slots": 4073
+    },
+    "Contusion": {
+     "k": 2,
+     "bic": [
+      26310.883,
+      26262.39,
+      26282.231,
+      26306.813
+     ],
+     "n_study_slots": 4073
+    },
+    "Fracture": {
+     "k": 2,
+     "bic": [
+      26349.946,
+      26318.021,
+      26339.654,
+      26364.262
+     ],
+     "n_study_slots": 4073
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,57 @@
+{
+  "experiment_name": "coatnet_spatial_planeaux01_s2online_union_seriesneck_headreset_ep10_aug_v6t275r040_knees_cos20_softlse_half_gold_seriesaug_ema_usub_dprior_a10",
+  "seed": 506,
+  "data": {
+    "cache_dir": "data/cache/cache_native_384_series_all_exact_uniform_sub",
+    "labels_csv": "data/label/ayfukushima/blend3/pseudo_v6t275_r040_knees/labels_soft.csv",
+    "batch_size": 2,
+    "num_workers": 12,
+    "union_bag": {
+      "k_min": 32,
+      "k_max": 352,
+      "eval_cap": 384
+    },
+    "depth_prior": {
+      "path": "data/depth_prior/v1.json",
+      "alpha": 1.0
+    },
+    "subcases_csv": "data/label/ayfukushima/bilateral_knees/knee_series.csv"
+  },
+  "model": {
+    "window": {
+      "norm": "half",
+      "train_chunk": 64
+    },
+    "spatial": {
+      "enabled": true
+    },
+    "plane_aux": true,
+    "freeze_encoder": true,
+    "series_neck": {
+      "enabled": true
+    }
+  },
+  "train": {
+    "epochs": 10,
+    "learning_rate": 0.0001,
+    "encoder_lr": 0.0,
+    "grad_checkpointing": false,
+    "accumulate_grad_batches": 2,
+    "rank_queue": 64,
+    "ema_decay": 0.995,
+    "rank_loss": "soft_lse",
+    "rank_temperature": 1.0,
+    "plane_aux_weight": 0.1,
+    "save_every_epoch": true,
+    "init_weights": "output/coatnet_spatial_planeaux01_aug_v6t275r040_knees_cos20_softlse_half_gold_seriesaug_ema_usub/fold2/checkpoints/epoch19_ema.pt",
+    "init_weights_skip": [
+      "att.",
+      "clsW",
+      "clsb",
+      "spatial_att.",
+      "spatial_w",
+      "planeW",
+      "planeb"
+    ]
+  }
+}

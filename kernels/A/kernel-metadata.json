@@ -1,0 +1,24 @@
+{
+  "id": "OWNER/rsna-knee-8th-inference-a",
+  "title": "RSNA Knee 8th inference A",
+  "code_file": "inference.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "competition_sources": [
+    "rsna-knee-abnormality-detection"
+  ],
+  "dataset_sources": [
+    "OWNER/rsna-knee-8th-pkg",
+    "OWNER/rsna-knee-8th-model"
+  ],
+  "model_sources": [],
+  "machine_shape": "NvidiaTeslaT4",
+  "kernel_sources": [
+    "packagemanager/pm-133971600-at-10-06-2026-16-13-23"
+  ],
+  "docker_image": "gcr.io/kaggle-private-byod/python@sha256:37c64f7dd9c54116ecd1bcc88817c5469b88387388fade02bfa8bf3fc647d461"
+}

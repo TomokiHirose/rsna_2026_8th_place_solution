@@ -1,0 +1,32 @@
+{
+  "experiment_name": "exp242_coatnet_spatial_ema_teacher_start_v4",
+  "data": {
+    "labels_csv": "data/label/ayfukushima/teacher_oof/v4/labels_teacher.csv",
+    "folds_csv": "data/depth_prior/teacher_folds.csv",
+    "batch_size": 4,
+    "split": "folds",
+    "cache_dir": "data/cache/cache_native_384_series_all_exact",
+    "aug": {
+      "affine_prob": 0.0,
+      "lowres_prob": 0.0,
+      "blur_prob": 0.0,
+      "noise_prob": 0.0
+    }
+  },
+  "model": {
+    "window": {
+      "k_train": 24,
+      "norm": "half"
+    },
+    "spatial": {
+      "enabled": true
+    }
+  },
+  "train": {
+    "learning_rate": 0.0007,
+    "encoder_lr": 2.1e-05,
+    "rank_queue": 32,
+    "save_every_epoch": true,
+    "ema_decay": 0.995
+  }
+}

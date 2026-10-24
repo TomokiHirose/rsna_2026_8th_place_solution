@@ -1,0 +1,31 @@
+{
+  "experiment_name": "coatnet_spatial_planeaux01_aug_v6t275r040_knees_cos20_softlse_half_gold_seriesaug_ema_usub",
+  "seed": 126,
+  "data": {
+    "cache_dir": "data/cache/cache_native_384_series_all_exact_uniform_sub",
+    "labels_csv": "data/label/ayfukushima/blend3/pseudo_v6t275_r040_knees/labels_soft.csv",
+    "batch_size": 4,
+    "subseries": true,
+    "subcases_csv": "data/label/ayfukushima/bilateral_knees/knee_series.csv"
+  },
+  "model": {
+    "window": {
+      "norm": "half",
+      "k_train": 24
+    },
+    "spatial": {
+      "enabled": true
+    },
+    "plane_aux": true
+  },
+  "train": {
+    "save_every_epoch": true,
+    "learning_rate": 0.0007,
+    "encoder_lr": 2.1e-05,
+    "rank_queue": 32,
+    "ema_decay": 0.995,
+    "rank_loss": "soft_lse",
+    "rank_temperature": 1.0,
+    "plane_aux_weight": 0.1
+  }
+}
