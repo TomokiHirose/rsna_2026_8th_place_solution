@@ -14,8 +14,8 @@ def test_pkg_build_only_stages_the_package(tmp_path: Path, monkeypatch: pytest.M
     monkeypatch.setattr(kaggle_ops, "STAGE_ROOT", tmp_path)
     result = invoke(kaggle_ops.main, ["--owner", "someone", "pkg", "--build-only"])
     assert result.exit_code == 0
-    staged = next(tmp_path.glob("rsna-knee-8th-pkg-*"))
-    assert json.loads((staged / "dataset-metadata.json").read_text())["id"] == "someone/rsna-knee-8th-pkg"
+    staged = next(tmp_path.glob("rsna-knee-pkg-*"))
+    assert json.loads((staged / "dataset-metadata.json").read_text())["id"] == "someone/rsna-knee-pkg"
     package = staged / "payload" / "rsna_knee"
     assert (package / "inference.py").read_text() == (REPO_ROOT / "rsna_knee" / "inference.py").read_text()
     assert not list(package.rglob("__pycache__"))
@@ -33,12 +33,12 @@ def test_model_build_only_fails_on_an_incomplete_fold(tmp_path: Path, monkeypatc
     assert result.exit_code == 1 and "missing artifact" in result.stderr
 
 
-@pytest.mark.parametrize(("target", "slug"), [("A", "rsna-knee-8th-inference-a"), ("B", "rsna-knee-8th-inference-b"), ("C", "rsna-knee-inference-private-best-ensemble")])
+@pytest.mark.parametrize(("target", "slug"), [("A", "rsna-knee-8th-inference-a"), ("B", "rsna-knee-8th-inference-b"), ("C", "rsna-knee-8th-private-best-ensemble")])
 def test_stage_kernel_fills_in_the_owner(target: str, slug: str, tmp_path: Path) -> None:
     kaggle_ops.stage_kernel(kaggle_ops.KERNEL_DIRS[target], tmp_path, "someone")
     meta = json.loads((tmp_path / "kernel-metadata.json").read_text())
     assert meta["id"] == kaggle_ops.kernel_id("someone", target) == f"someone/{slug}"
-    assert meta["dataset_sources"] == ["someone/rsna-knee-8th-pkg", "someone/rsna-knee-8th-model"]
+    assert meta["dataset_sources"] == ["someone/rsna-knee-pkg", "someone/rsna-knee-model"]
     notebook = json.loads((tmp_path / meta["code_file"]).read_text())
     source = "".join("".join(cell["source"]) for cell in notebook["cells"])
     assert 'OWNER = "someone"' in source and 'OWNER = "OWNER"' not in source
