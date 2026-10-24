@@ -33,11 +33,11 @@ def test_model_build_only_fails_on_an_incomplete_fold(tmp_path: Path, monkeypatc
     assert result.exit_code == 1 and "missing artifact" in result.stderr
 
 
-@pytest.mark.parametrize("target", ["A", "B"])
-def test_stage_kernel_fills_in_the_owner(target: str, tmp_path: Path) -> None:
+@pytest.mark.parametrize(("target", "slug"), [("A", "rsna-knee-8th-inference-a"), ("B", "rsna-knee-8th-inference-b"), ("C", "rsna-knee-inference-private-best-ensemble")])
+def test_stage_kernel_fills_in_the_owner(target: str, slug: str, tmp_path: Path) -> None:
     kaggle_ops.stage_kernel(kaggle_ops.KERNEL_DIRS[target], tmp_path, "someone")
     meta = json.loads((tmp_path / "kernel-metadata.json").read_text())
-    assert meta["id"] == kaggle_ops.kernel_id("someone", target) == f"someone/rsna-knee-8th-inference-{target.lower()}"
+    assert meta["id"] == kaggle_ops.kernel_id("someone", target) == f"someone/{slug}"
     assert meta["dataset_sources"] == ["someone/rsna-knee-8th-pkg", "someone/rsna-knee-8th-model"]
     notebook = json.loads((tmp_path / meta["code_file"]).read_text())
     source = "".join("".join(cell["source"]) for cell in notebook["cells"])
