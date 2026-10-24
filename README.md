@@ -6,14 +6,15 @@
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
 
-Code and configs to reproduce our two final submissions to the [RSNA Knee Abnormality Detection](https://www.kaggle.com/competitions/rsna-knee-abnormality-detection) competition, from cache building to a late submission on Kaggle. The write-up is in [`docs/index.en.md`](docs/index.en.md).
+Code and configs to reproduce our two final submissions (A, B) and our best private-score submission (C) to the [RSNA Knee Abnormality Detection](https://www.kaggle.com/competitions/rsna-knee-abnormality-detection) competition, from cache building to a late submission on Kaggle. The write-up is in [`docs/index.en.md`](docs/index.en.md).
 
 | Submission | Models | Public | Private |
 |---|---|---:|---:|
 | A | 12 series_neck models: CoAtNet-2 140 mm × 4, CoAtNet-2 110 mm × 4, CAFormer-S36 140 mm × 4. Equal probability average | 0.968 | 0.957 |
 | B | 4 parts at 0.25 each (probability blend): ctxenc × 4, slotctx × 4, CAFormer-S36 110 mm × 3, CAFormer-S36 140 mm × 4 | 0.967 | 0.957 |
+| C (private best) | 16 models on the round-2 labels `pseudo2_v6_r040`, probability blend: CoAtNet-2 140 mm × 4 + 110 mm × 4 (0.6), ctxenc × 4 (0.2), slotctx × 4 (0.2) | 0.967 | 0.958 |
 
-The CAFormer-S36 models are shared by A and B. Inference uses no TTA.
+The CAFormer-S36 models are shared by A and B. Inference uses no TTA. C was not selected as a final submission; its notebook runs from the same model dataset, but the configs to retrain its 16 models are not included yet (the round-2-label versions of the CoAtNet-2 and ctxenc/slotctx sets).
 
 The test set is hidden, so a submission can only be scored by running the notebook on Kaggle. The flow is: train → pick the weights → upload the code and weights as Kaggle datasets → push the notebook → submit that notebook version.
 
@@ -26,8 +27,8 @@ configs/<set>/<stage>/fold<i>.json
 data/             folds, soft labels, depth prior, per-knee split (see data/README.md)
 tests/            end-to-end and unit tests on synthetic DICOM studies (CPU only)
 tools/            cache building, depth prior, weight selection, Kaggle operations
-kernels/A, kernels/B
-                  inference notebooks of the two submissions (+ kernel-metadata.json)
+kernels/A, kernels/B, kernels/C
+                  inference notebooks of the submissions (+ kernel-metadata.json); all read one model dataset
 docs/             write-up
 ```
 
@@ -133,6 +134,8 @@ uv run python tools/kaggle_ops.py --owner <you> model -m "submission A weights"
 uv run python tools/kaggle_ops.py --owner <you> kernel --target A --wait
 uv run python tools/kaggle_ops.py --owner <you> submit --target A --version <N> --message "submission A"
 ```
+
+The model dataset is the whole `output/submit/`, so keep the stores of every submission there; the notebooks A, B and C share it and each reads only the experiments in its `Ensemble`.
 
 The submit step runs `kaggle competitions submit -c rsna-knee-abnormality-detection -f submission.csv -k <you>/rsna-knee-8th-inference-a -v <N> -m ...`.
 

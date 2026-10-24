@@ -23,7 +23,7 @@ MODEL_SLUG = "rsna-knee-8th-model"
 # Staging root; it must be on the same filesystem as the artifacts because files are hard-linked
 STAGE_ROOT = REPO_ROOT / "output"
 SUBMIT_STORE = REPO_ROOT / "output" / "submit"
-KERNEL_DIRS = {"A": REPO_ROOT / "kernels" / "A", "B": REPO_ROOT / "kernels" / "B"}
+KERNEL_DIRS = {target: REPO_ROOT / "kernels" / target for target in ("A", "B", "C")}
 PLACEHOLDER = "OWNER"
 # ``--dir-mode zip`` strips one top-level directory, so uploads are wrapped in this one
 WRAPPER = "payload"
