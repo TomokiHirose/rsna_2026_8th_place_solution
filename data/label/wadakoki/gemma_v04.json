@@ -1,0 +1,37 @@
+{
+  "prompt": "data/label/wadakoki/prompt_en_v0_4.md",
+  "prompt_version": "severity_v0.4",
+  "model": {
+    "family": "gemma4",
+    "repository": "unsloth/gemma-4-26B-A4B-it-GGUF",
+    "revision": "c099eb48e663fd284577b04978a94ffccb261841",
+    "filename": "gemma-4-26B-A4B-it-UD-Q4_K_XL.gguf"
+  },
+  "engine": {
+    "name": "llama.cpp",
+    "release": "b11026",
+    "context_per_slot": 8192,
+    "parallel": 8,
+    "alias": "rsna-gemma",
+    "port": 18034
+  },
+  "generation": {
+    "temperature": 0.4,
+    "top_p": 0.95,
+    "top_k": 64,
+    "max_tokens": 2304,
+    "enable_thinking": true,
+    "reasoning_budget": 1024,
+    "base_seed": 340918,
+    "max_attempts": 3
+  },
+  "input": {
+    "expected_rows": 4349
+  },
+  "runtime": {
+    "save_every_rows": 4,
+    "save_every_seconds": 30,
+    "request_timeout_seconds": 240,
+    "maximum_hours": 12
+  }
+}

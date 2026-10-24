@@ -13,6 +13,7 @@ Small inputs that the configs read directly. Paths are kept as the configs refer
 | `label/ayfukushima/blend3/pseudo_v6t275_r040_knees/` | The same labels, split per knee |
 | `label/ayfukushima/blend3/pseudo2_v6_r040/` | Soft labels, round 2 |
 | `label/ayfukushima/blend3/pseudo2_v6_r040_knees/` | The same labels, split per knee |
+| `label/wadakoki/` | How the Qwen and Gemma report scores in the report-based label were generated (prompt, settings, code). The scores themselves are not included |
 
 ## Soft labels
 
@@ -24,7 +25,7 @@ Each folder holds `labels_soft.csv` (12 findings, 4,345 non-gold studies; the 58
 - The teacher OOF is calibrated per finding by isotonic regression fitted on the other 3 folds.
 - Round 1 (`pseudo_v6t275_r040`) uses a teacher trained on `start`; round 2 (`pseudo2_v6_r040`) uses a teacher with the same recipe trained on the round-1 labels, and is mixed with `start` again (not with round 1).
 
-The source labels and the teachers are not part of this repository; the label files are provided as they were used.
+The source labels and the teachers are not part of this repository; the label files are provided as they were used. For the Qwen and Gemma report scores, the prompt, settings and code are in `label/wadakoki/`.
 
 ## Depth prior
 
