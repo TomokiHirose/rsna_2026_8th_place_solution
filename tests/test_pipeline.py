@@ -96,8 +96,8 @@ def pipeline(tmp_path_factory: pytest.TempPathFactory) -> SimpleNamespace:
     (kaggle_input / "competitions").mkdir(parents=True)
     (kaggle_input / "competitions" / "rsna-knee-abnormality-detection").symlink_to(comp)
     (kaggle_input / "datasets" / "OWNER").mkdir(parents=True)
-    (kaggle_input / "datasets" / "OWNER" / "rsna-knee-pkg").symlink_to(REPO_ROOT)
-    (kaggle_input / "datasets" / "OWNER" / "rsna-knee-model").symlink_to(store)
+    (kaggle_input / "datasets" / "OWNER" / "rsna-knee-8th-pkg").symlink_to(REPO_ROOT)
+    (kaggle_input / "datasets" / "OWNER" / "rsna-knee-8th-model").symlink_to(store)
     return SimpleNamespace(work=work, comp=comp, cache=cache, stage1=stage1, stage2=stage2, base_lse=base_lse, context=context, store=store, kaggle_input=kaggle_input)
 
 
@@ -178,7 +178,7 @@ def _single(pipeline: SimpleNamespace, name: str) -> np.ndarray:
 
 def test_notebook_a_matches_study_scoring_on_the_series_neck_model(pipeline: SimpleNamespace, monkeypatch: pytest.MonkeyPatch) -> None:
     submission, scope = _run_notebook("A", pipeline, monkeypatch, Ensemble=[[STAGE2]], PART_WEIGHTS=None)
-    assert scope["PKG_DIR"].name == "rsna-knee-pkg" and scope["MODEL_ROOT"].name == "rsna-knee-model"
+    assert scope["PKG_DIR"].name == "rsna-knee-8th-pkg" and scope["MODEL_ROOT"].name == "rsna-knee-8th-model"
     assert list(submission.columns) == [ID_COLUMN, *LABELS] and submission[ID_COLUMN].tolist() == TEST_IDS
     assert scope["members"].models[0].union_cap == 14
     np.testing.assert_allclose(submission[LABELS].to_numpy(), _single(pipeline, STAGE2), rtol=1e-5, atol=1e-6)
@@ -204,8 +204,8 @@ def test_kaggle_ops_model_build_only_stages_the_store(pipeline: SimpleNamespace,
     monkeypatch.setattr(kaggle_ops, "SUBMIT_STORE", pipeline.store)
     result = invoke(kaggle_ops.main, ["--owner", "someone", "model", "--build-only"])
     assert result.exit_code == 0
-    staged = next((pipeline.work / "stage").glob("rsna-knee-model-*"))
-    assert json.loads((staged / "dataset-metadata.json").read_text())["id"] == "someone/rsna-knee-model"
+    staged = next((pipeline.work / "stage").glob("rsna-knee-8th-model-*"))
+    assert json.loads((staged / "dataset-metadata.json").read_text())["id"] == "someone/rsna-knee-8th-model"
     for name in (STAGE2, CONTEXT):
         assert (staged / "payload" / name / "fold0" / "model.pt").samefile(pipeline.store / name / "fold0" / "model.pt")
         assert (staged / "payload" / name / "inference.json").is_file()

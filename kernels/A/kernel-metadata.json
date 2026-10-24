@@ -12,8 +12,8 @@
     "rsna-knee-abnormality-detection"
   ],
   "dataset_sources": [
-    "OWNER/rsna-knee-pkg",
-    "OWNER/rsna-knee-model"
+    "OWNER/rsna-knee-8th-pkg",
+    "OWNER/rsna-knee-8th-model"
   ],
   "model_sources": [],
   "machine_shape": "NvidiaTeslaT4",
