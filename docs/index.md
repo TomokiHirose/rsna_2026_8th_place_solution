@@ -45,7 +45,7 @@
 1つ目（L）は、次の3つのLLMラベルの平均である。
 
 - 公開ラベル：Kaggleで公開されていたレポート由来のLLMラベル（[dreaddevelopment/rsna-knee-labels](https://www.kaggle.com/datasets/dreaddevelopment/rsna-knee-labels)）。骨折・骨挫傷の2所見だけは、GPT-6 Astraにレポートを読み直させた判定に置き換えた。
-- Qwen／Gemma：Qwen3.8-27BとGemma 4 26B-A4Bに同じプロンプトでレポート本文だけを読ませ、重症度・量・範囲で症例を順位付けたスコア。記載のない所見の既定値は公開ラベルから逆推定し、公開ラベルと同じ尺度にそろえた。
+- Qwen／Gemma：Qwen3.8-27BとGemma 4 26B-A4Bに同じプロンプトでレポート本文だけを読ませ、重症度・量・範囲で症例を順位付けたスコア。記載のない所見の既定値は公開ラベルから逆推定し、公開ラベルと同じ尺度にそろえた。プロンプト・設定・コードは[`data/label/wadakoki/`](../data/label/wadakoki/README.md)。
 
 3つのラベルは互いによく似た順位を付けていた（所見ごとのSpearman相関の平均：Qwen–Gemma 0.898、Qwen–公開ラベル 0.863、Gemma–公開ラベル 0.859）。そこで、どれか1つを選ばず、3つを同じ重みで平均してLとした。
 

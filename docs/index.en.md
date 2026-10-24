@@ -45,7 +45,7 @@ We prepared 2 sources of report-based labels.
 The first, L, averages 3 sets of LLM labels:
 
 - Public labels: report-based LLM labels from [dreaddevelopment/rsna-knee-labels](https://www.kaggle.com/datasets/dreaddevelopment/rsna-knee-labels). For Fracture and Contusion only, we replaced these with GPT-6 Astra's reassessment of the reports.
-- Qwen/Gemma: Qwen3.8-27B and Gemma 4 26B-A4B read only the report text with the same prompt and scored cases by severity, amount, and extent. Default scores for unmentioned findings were inferred from the public labels to align the scales.
+- Qwen/Gemma: Qwen3.8-27B and Gemma 4 26B-A4B read only the report text with the same prompt and scored cases by severity, amount, and extent. Default scores for unmentioned findings were inferred from the public labels to align the scales. The prompt, settings and code are in [`data/label/wadakoki/`](../data/label/wadakoki/README.md).
 
 The 3 label sets produced similar rankings. Mean per-finding Spearman correlations were 0.898 for Qwen–Gemma, 0.863 for Qwen–public labels, and 0.859 for Gemma–public labels. We averaged all 3 equally to obtain L.
 
