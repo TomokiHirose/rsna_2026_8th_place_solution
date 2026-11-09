@@ -14,6 +14,8 @@ Code and configs to reproduce our two final submissions (A, B) and our best priv
 | B | 4 parts at 0.25 each (probability blend): ctxenc × 4, slotctx × 4, CAFormer-S36 110 mm × 3, CAFormer-S36 140 mm × 4 | 0.967 | 0.957 |
 | C (private best) | 16 models on the round-2 labels `pseudo2_v6_r040`, probability blend: CoAtNet-2 140 mm × 4 + 110 mm × 4 (0.6), ctxenc × 4 (0.2), slotctx × 4 (0.2) | 0.967 | 0.958 |
 
+The scored submission A (57482743) was run from version 68 of the public notebook [`wadakoki/rsna-knee-inference-v1`](https://www.kaggle.com/code/wadakoki/rsna-knee-inference-v1?scriptVersionId=360760671), which reads the public datasets [`wadakoki/rsna-knee-model`](https://www.kaggle.com/datasets/wadakoki/rsna-knee-model) (one folder per model, all 12 models of A) and [`wadakoki/rsna-knee-pkg`](https://www.kaggle.com/datasets/wadakoki/rsna-knee-pkg) and does not use the Package Manager kernel. `kernels/A` packages the same models under the folder names of this repository and has not been run on Kaggle; use that notebook version to reproduce A as scored.
+
 The CAFormer-S36 models are shared by A and B. Inference uses no TTA. C was not selected as a final submission; its notebook runs from the same model dataset, but the configs to retrain its 16 models are not included yet (the round-2-label versions of the CoAtNet-2 and ctxenc/slotctx sets).
 
 The test set is hidden, so a submission can only be scored by running the notebook on Kaggle. The flow is: train → pick the weights → upload the code and weights as Kaggle datasets → push the notebook → submit that notebook version.
